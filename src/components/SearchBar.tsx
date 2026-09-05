@@ -23,7 +23,6 @@ const styles: Record<string, CSSProperties> = {
     backgroundColor: 'var(--color-bg)',
     border: '1px solid var(--color-border)',
     borderRadius: 'var(--radius-md)',
-    outline: 'none',
   },
 };
 
