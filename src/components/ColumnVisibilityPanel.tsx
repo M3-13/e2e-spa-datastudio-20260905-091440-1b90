@@ -62,10 +62,6 @@ function ColumnVisibilityPanel() {
   const columns = state.dataset?.columns ?? [];
   const allRef = useRef<HTMLInputElement>(null);
 
-  if (columns.length === 0) {
-    return null;
-  }
-
   const visibleCount = columns.filter((c) => c.visible).length;
   const allVisible = visibleCount === columns.length;
   const noneVisible = visibleCount === 0;
@@ -76,6 +72,10 @@ function ColumnVisibilityPanel() {
       allRef.current.indeterminate = someVisible;
     }
   }, [someVisible]);
+
+  if (columns.length === 0) {
+    return null;
+  }
 
   function handleToggleAll() {
     const target = !allVisible;
