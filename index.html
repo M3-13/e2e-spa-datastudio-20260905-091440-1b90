@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSV DataStudio</title>
+    <script>
+      (function () {
+        var theme = 'light';
+        try {
+          var stored = window.localStorage.getItem('datastudio.theme');
+          if (stored === 'dark' || stored === 'light') {
+            theme = stored;
+          }
+        } catch (e) {
+          theme = 'light';
+        }
+        document.documentElement.classList.add(theme);
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
