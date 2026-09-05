@@ -227,6 +227,69 @@ h4 {
   gap: var(--space-2);
 }
 
+.column-visibility {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  padding: var(--space-2);
+  min-width: 220px;
+}
+
+.column-visibility__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: 0 var(--space-1) var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.column-visibility__title {
+  font-weight: var(--heading-weight);
+  font-size: 0.875rem;
+}
+
+.column-visibility__toggle-all,
+.column-visibility__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.column-visibility__toggle-all {
+  min-height: 28px;
+}
+
+.column-visibility__list {
+  list-style: none;
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.column-visibility__item + .column-visibility__item {
+  margin-top: var(--space-0);
+}
+
+.column-visibility__label {
+  padding: var(--space-0) var(--space-1);
+  border-radius: var(--radius-sm);
+  min-height: 28px;
+}
+
+.column-visibility__label:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.column-visibility__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .status-banner {
   max-width: 640px;
   padding: var(--space-3);
