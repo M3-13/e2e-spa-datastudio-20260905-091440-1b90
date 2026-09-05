@@ -1,0 +1,37 @@
+.status-banner--loading {
+  border-color: #c7d2fe;
+  background-color: #eef2ff;
+  color: #2f4be0;
+}
+
+.status-banner--error {
+  border-color: #fecdca;
+  background-color: #fef3f2;
+  color: #b42318;
+}
+
+.status-banner--empty {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-muted);
+}
+
+.status-banner--ready {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-fg);
+}
+
+html.dark .status-banner--loading,
+html[data-theme='dark'] .status-banner--loading {
+  border-color: #3a4470;
+  background-color: #1e2340;
+  color: #a5b4ff;
+}
+
+html.dark .status-banner--error,
+html[data-theme='dark'] .status-banner--error {
+  border-color: #6b2b2b;
+  background-color: #2a1518;
+  color: #fda29b;
+}
