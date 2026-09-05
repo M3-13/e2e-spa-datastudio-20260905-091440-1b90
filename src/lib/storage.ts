@@ -11,6 +11,8 @@ import type {
 } from '../types';
 
 export const PERSISTENCE_STORAGE_KEY = 'datastudio.persisted';
+// Mirrors THEME_STORAGE_KEY in src/state/store.tsx (kept private there).
+export const THEME_STORAGE_KEY = 'datastudio.theme';
 
 const DELIMITERS: readonly Delimiter[] = [',', ';', '\t', '|'];
 
@@ -224,6 +226,7 @@ export function clearPersisted(): void {
   if (!storage) return;
   try {
     storage.removeItem(PERSISTENCE_STORAGE_KEY);
+    storage.removeItem(THEME_STORAGE_KEY);
   } catch {
     // storage unavailable — nothing to clear
   }

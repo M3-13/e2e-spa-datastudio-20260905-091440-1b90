@@ -5,6 +5,7 @@ import {
   loadPersistedState,
   PERSISTENCE_STORAGE_KEY,
   savePersistedState,
+  THEME_STORAGE_KEY,
   validatePersistedState,
 } from './storage';
 
@@ -223,6 +224,14 @@ describe('load / save / clear', () => {
     clearPersisted();
     expect(storage.getItem(PERSISTENCE_STORAGE_KEY)).toBeNull();
     expect(loadPersistedState()).toBeNull();
+  });
+
+  it('clearPersisted also removes the theme key', () => {
+    storage.setItem(THEME_STORAGE_KEY, 'dark');
+    savePersistedState(validPersisted);
+    clearPersisted();
+    expect(storage.getItem(THEME_STORAGE_KEY)).toBeNull();
+    expect(storage.getItem(PERSISTENCE_STORAGE_KEY)).toBeNull();
   });
 
   it('load / save / clear do not throw when storage is unavailable', () => {
